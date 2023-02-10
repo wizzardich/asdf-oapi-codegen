@@ -1,27 +1,24 @@
-<div align="center">
+# asdf-oapi-codegen
 
-# asdf-oapi-codegen [![Build](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/build.yml/badge.svg)](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/build.yml) [![Lint](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/lint.yml/badge.svg)](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/lint.yml)
-
+[![Build](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/build.yml/badge.svg)](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/build.yml) [![Lint](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/lint.yml/badge.svg)](https://github.com/wizzardich/asdf-oapi-codegen/actions/workflows/lint.yml)
 
 [oapi-codegen](https://github.com/deepmap/oapi-codegen) plugin for the [asdf version manager](https://asdf-vm.com).
 
-</div>
+## Contents
 
-# Contents
+- [asdf-oapi-codegen](#asdf-oapi-codegen)
+  - [Contents](#contents)
+  - [Dependencies](#dependencies)
+  - [Install](#install)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-- [Dependencies](#dependencies)
-- [Install](#install)
-- [Contributing](#contributing)
-- [License](#license)
-
-# Dependencies
-
-**TODO: adapt this section**
+## Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- `go`: golang installation, best provisioned with `asdf-golang`
 
-# Install
+## Install
 
 Plugin:
 
@@ -50,12 +47,12 @@ oapi-codegen --help
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
-# Contributing
+## Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
 [Thanks goes to these contributors](https://github.com/wizzardich/asdf-oapi-codegen/graphs/contributors)!
 
-# License
+## License
 
 See [LICENSE](LICENSE) © [Vlad Tomashpolskyi](https://github.com/wizzardich/)
