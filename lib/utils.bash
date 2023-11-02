@@ -3,7 +3,9 @@
 set -euo pipefail
 
 GO_MODULE="github.com/deepmap/oapi-codegen"
-GO_CMD_MODULE="github.com/deepmap/oapi-codegen/cmd/oapi-codegen"
+GO_MODULE_V2="github.com/deepmap/oapi-codegen/v2"
+GO_CMD_MODULE="${GO_MODULE}/cmd/oapi-codegen"
+GO_CMD_MODULE_V2="${GO_MODULE_V2}/cmd/oapi-codegen"
 TOOL_NAME="oapi-codegen"
 TOOL_TEST="oapi-codegen --help"
 
@@ -23,6 +25,7 @@ list_all_versions() {
 
 list_go_module_versions() {
   go list -m -versions "$GO_MODULE" | tr ' ' '\n' | sed 's/^v//' | grep -v "$GO_MODULE" || true
+  go list -m -versions "$GO_MODULE_V2" | tr ' ' '\n' | sed 's/^v//' | grep -v "$GO_MODULE_V2" || true
 }
 
 install_version() {
@@ -35,7 +38,11 @@ install_version() {
   fi
 
   (
-    GOBIN="${install_path}" go install "${GO_CMD_MODULE}@${version}"
+    if [[ $version = v2* ]]; then
+      GOBIN="${install_path}" go install "${GO_CMD_MODULE_V2}@${version}"
+    else
+      GOBIN="${install_path}" go install "${GO_CMD_MODULE}@${version}"
+    fi
 
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
