@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/wizzardich/asdf-oapi-codegen/compare/v1.0.0...v1.0.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* add support for v2 ([#2](https://github.com/wizzardich/asdf-oapi-codegen/issues/2)) ([33b6ce7](https://github.com/wizzardich/asdf-oapi-codegen/commit/33b6ce7c3ce0d676bef74f8ac563fbc5145d3e1f))
+
 ## 1.0.0 (2023-02-10)
 
 
