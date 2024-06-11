@@ -41,7 +41,7 @@ install_version() {
 
   (
     if [[ $version = v2.3* ]]; then
-      GOBIN="${install_path}" go install "${GO_MODULE_V2_3}@${version}"
+      GOBIN="${install_path}" go install "${GO_CMD_MODULE_V2_3}@${version}"
     elif [[ $version = v2* ]]; then
       GOBIN="${install_path}" go install "${GO_CMD_MODULE_V2}@${version}"
     else
