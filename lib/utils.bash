@@ -4,8 +4,10 @@ set -euo pipefail
 
 GO_MODULE="github.com/deepmap/oapi-codegen"
 GO_MODULE_V2="github.com/deepmap/oapi-codegen/v2"
+GO_MODULE_V2_3="github.com/oapi-codegen/oapi-codegen/v2"
 GO_CMD_MODULE="${GO_MODULE}/cmd/oapi-codegen"
 GO_CMD_MODULE_V2="${GO_MODULE_V2}/cmd/oapi-codegen"
+GO_CMD_MODULE_V2_3="${GO_MODULE_V2_3}/cmd/oapi-codegen"
 TOOL_NAME="oapi-codegen"
 TOOL_TEST="oapi-codegen --help"
 
@@ -38,7 +40,9 @@ install_version() {
   fi
 
   (
-    if [[ $version = v2* ]]; then
+    if [[ $version = v2.3* ]]; then
+      GOBIN="${install_path}" go install "${GO_MODULE_V2_3}@${version}"
+    elif [[ $version = v2* ]]; then
       GOBIN="${install_path}" go install "${GO_CMD_MODULE_V2}@${version}"
     else
       GOBIN="${install_path}" go install "${GO_CMD_MODULE}@${version}"
